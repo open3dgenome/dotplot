@@ -34,8 +34,8 @@ dotPlotm <- function(seq1, seq2, wsize = 10, wstep = 1, nmatch = -1, ...)
   yrange <- range(y) #+ c(-step/2, step/2)
   plot(x, y, xlim=xrange, ylim=yrange, type="n", ...)
        #xaxs="i", yaxs="i", type="n") #"i" marks it as going right up to the edge
-  rasterImage(xy, xrange[1], yrange[1],
-              xrange[2], yrange[2],interpolate=FALSE)
+  #rasterImage(xy, xrange[1], yrange[1],
+   #           xrange[2], yrange[2],interpolate=FALSE)
 
 
 }
