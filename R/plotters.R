@@ -26,13 +26,15 @@ dotPlotm <- function(seq1, seq2, wsize = 10, wstep = 1, nmatch = -1, ...)
     stop("nmatch > wsize is not allowed")
 
   xy <- mkDotPlotMatrix(seq1, seq2, wsize, wstep, nmatch)
+  plot(x, y, xlim=xrange, ylim=yrange, type="n", ...)
+  return(xy)
   xy = apply(xy, 2, rev)
   # Use raster grapics, see https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Murrell.pdf
   x = seq(from = 1, to = (nchar(seq1) - wsize), length=50)
   y = seq(from = 1, to = (nchar(seq2) - wsize), length=50)
   xrange <- range(x) #+ c(-step/2, step/2)
   yrange <- range(y) #+ c(-step/2, step/2)
-  plot(x, y, xlim=xrange, ylim=yrange, type="n", ...)
+  
        #xaxs="i", yaxs="i", type="n") #"i" marks it as going right up to the edge
   #rasterImage(xy, xrange[1], yrange[1],
    #           xrange[2], yrange[2],interpolate=FALSE)
