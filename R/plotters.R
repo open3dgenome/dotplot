@@ -26,7 +26,7 @@ dotPlotm <- function(seq1, seq2, wsize = 10, wstep = 1, nmatch = -1, ...)
     stop("nmatch > wsize is not allowed")
 
   xy <- mkDotPlotMatrix(seq1, seq2, wsize, wstep, nmatch)
-  plot(xy$x, xy$y, ...)
+  plot(xy[,1], xy[,2], ...)
   return(xy)
   xy = apply(xy, 2, rev)
   # Use raster grapics, see https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Murrell.pdf
