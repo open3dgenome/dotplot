@@ -25,7 +25,7 @@ dotPlotm <- function(seq1, seq2, wsize = 10, wstep = 1, nmatch = -1, ...)
   if (nmatch > wsize)
     stop("nmatch > wsize is not allowed")
 
-  xy <- mkDotPlotMatrix(seq1, seq2, wsize, wstep, nmatch)
+  xy <- mkDotPlotDataFrame(seq1, seq2, wsize, wstep, nmatch)
   plot(xy[,1], xy[,2], ...)
   return(xy)
   xy = apply(xy, 2, rev)
